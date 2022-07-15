@@ -1,0 +1,21 @@
+[package]
+edition = "2021"
+name = "jwst"
+version = "0.1.0"
+[dependencies]
+dirs = "*"
+image = "*"
+rand = "*"
+wallpaper = "*"
+
+[dependencies.reqwest]
+features = ["blocking"]
+version = "*"
+
+[profile]
+[profile.release]
+codegen-units = 1
+lto = "fat"
+opt-level = 5
+panic = "abort"
+strip = true
