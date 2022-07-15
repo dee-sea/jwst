@@ -8,6 +8,6 @@ The command chooses a random image from the JWST in the wallpaper directory, a
 random zoom level according to the resolution of the original image and the 
 requested image size, and then crops a random portion of the originale image to make a kind of new wallpaper each time.
 
-Syntax: jwst <width> <height> [<output file>]
+Syntax: jwst width height [output file]
 
 Have fun!
