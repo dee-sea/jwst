@@ -1,3 +1,18 @@
+//! This is a quick wallpaper generator from the first JWST images.
+//!
+//!The application takes at least two parameters: the width and height of the image
+//!to be generated and optionally the name of the output file. If no output file is
+//!specified, the output is written to wp.png in the current directory.
+//!
+//!The command chooses a random image from the JWST in the wallpaper directory, a
+//!random zoom level according to the resolution of the original image and the
+//!requested image size, and then crops a random portion of the originale image to
+//!make a kind of new wallpaper each time.
+//!
+//!Syntax: jwst width height [output file]
+//!
+//!Have fun!
+
 use rand::seq::IteratorRandom;
 use rand::Rng;
 use reqwest::blocking::*;
@@ -10,6 +25,8 @@ use std::path::Path;
 mod files;
 mod path;
 
+/// This function takes a Vec: String of Urls to be downloaded and download them if they are no
+/// already in the local directory.
 fn download_files(files: Vec<String>) {
     let names = files::get_names();
     for (counter, file) in files.into_iter().enumerate() {
@@ -25,11 +42,12 @@ fn download_files(files: Vec<String>) {
     }
 }
 
+/// This is the main function
 fn main() {
     let mut width = 1920;
     let mut height = 1080;
     let images = path::get_path();
-    let mut output = "wp.png";
+    let mut output = "/tmp/wp.png";
     let mut set_wp = true;
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
