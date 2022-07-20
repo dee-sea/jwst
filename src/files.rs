@@ -9,6 +9,7 @@ pub fn get_links() -> Vec<String> {
         "https://dl.dropboxusercontent.com/s/d02stvegqppm16o/Stephan_Quintet-composite.png"
             .to_string(),
         "https://dl.dropboxusercontent.com/s/rfnpu8az41ypobf/Stephan_Quintet-Miri.png".to_string(),
+        "https://dl.dropboxusercontent.com/s/bj5bzn5tnprisir/NGC628-composite.png".to_string(),
     ]
 }
 
@@ -22,5 +23,6 @@ pub fn get_names() -> Vec<String> {
         "Southern_Ring-Nircam.png".to_string(),
         "Stephan_Quintet-composite.png".to_string(),
         "Stephan_Quintet-Miri.png".to_string(),
+        "NGC628-composite.png".to_string(),
     ]
 }
